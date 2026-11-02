@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova AI - Smart Assistant</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">✦</div>
+            <span>Nova AI</span>
+        </div>
+
+        <button class="new-chat-btn" id="newChatButton">
+            <span>＋</span> New Conversation
+        </button>
+
+        <div class="sidebar-section">
+            <p class="sidebar-heading">WORKSPACE</p>
+
+            <button class="sidebar-link active" id="homeButton">
+                <span>⌂</span> Chat
+            </button>
+        </div>
+
+        <div class="history-section">
+            <div class="history-heading-row">
+                <p class="sidebar-heading">RECENT CHATS</p>
+                <span id="historyCount">0</span>
+            </div>
+
+            <div id="chatHistoryList" class="chat-history-list"></div>
+
+            <button class="clear-history-btn" id="clearHistoryButton">
+                Clear all history
+            </button>
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="model-card">
+                <div class="model-icon">✧</div>
+                <div>
+                    <strong>AI Model</strong>
+                    <p>Llama 3.2</p>
+                </div>
+                <span class="online-dot"></span>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-avatar">N</div>
+                <div>
+                    <strong>Nova Assistant</strong>
+                    <p>Your AI companion</p>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <button class="mobile-menu-btn" id="menuButton">☰</button>
+
+            <div class="topbar-title">
+                <h3>AI Assistant</h3>
+                <div class="status">
+                    <span class="online-dot"></span>
+                    <span id="connectionStatus">Local AI Assistant</span>
+                </div>
+            </div>
+
+            <button class="clear-chat-btn" id="clearChatButton">
+                <span>⌫</span> Clear Chat
+            </button>
+
+        </header>
+
+        <!-- Welcome Screen -->
+        <section class="welcome-screen" id="welcomeScreen">
+
+            <div class="welcome-content">
+
+                <div class="welcome-icon">
+                    <span>✦</span>
+                </div>
+
+                <p class="welcome-label">YOUR PERSONAL AI ASSISTANT</p>
+
+                <h1>What can I help you <span>discover</span> today?</h1>
+
+                <p class="welcome-description">
+                    Ask questions, learn something new, explore ideas,
+                    or get help with your everyday tasks.
+                </p>
+
+                <div class="suggestion-grid">
+
+                    <button class="suggestion-card" data-prompt="Explain artificial intelligence in simple words with real-life examples.">
+                        <div class="suggestion-icon purple">✧</div>
+                        <div>
+                            <strong>Learn something</strong>
+                            <p>Understand new topics easily</p>
+                        </div>
+                        <span class="suggestion-arrow">↗</span>
+                    </button>
+
+                    <button class="suggestion-card" data-prompt="Give me five creative and unique project ideas for college students.">
+                        <div class="suggestion-icon orange">✎</div>
+                        <div>
+                            <strong>Get creative ideas</strong>
+                            <p>Explore new possibilities</p>
+                        </div>
+                        <span class="suggestion-arrow">↗</span>
+                    </button>
+
+                    <button class="suggestion-card" data-prompt="Give me a practical daily plan to improve my English speaking skills.">
+                        <div class="suggestion-icon green">◎</div>
+                        <div>
+                            <strong>Improve your skills</strong>
+                            <p>Build confidence and knowledge</p>
+                        </div>
+                        <span class="suggestion-arrow">↗</span>
+                    </button>
+
+                    <button class="suggestion-card" data-prompt="Write a simple Python program to check whether a number is even or odd and explain it.">
+                        <div class="suggestion-icon blue">⌘</div>
+                        <div>
+                            <strong>Write some code</strong>
+                            <p>Get programming assistance</p>
+                        </div>
+                        <span class="suggestion-arrow">↗</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Chat Area -->
+        <section class="chat-area" id="chatArea">
+
+            <div class="chat-messages" id="chatMessages"></div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="message-avatar ai-avatar">✦</div>
+                <div class="typing-bubble">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <small>Nova is thinking...</small>
+            </div>
+
+        </section>
+
+        <!-- Input Area -->
+        <footer class="input-section">
+
+            <form class="chat-form" id="chatForm">
+
+                <textarea
+                    id="userInput"
+                    placeholder="Message Nova AI..."
+                    rows="1"
+                    maxlength="5000"
+                    required
+                ></textarea>
+
+                <button type="submit" id="sendButton" aria-label="Send message">
+                    ↑
+                </button>
+
+            </form>
+
+            <p class="input-footer">
+                Powered by Ollama · Llama 3.2
+                <span>AI can make mistakes. Verify important information.</span>
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
